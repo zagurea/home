@@ -1,0 +1,94 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>イルカの音楽</title>
+        <style>
+            @font-face {
+                font-family: maru;
+                src: url("KosugiMaru-Regular.ttf") format("truetype")
+            }
+            body{
+                background-color: #0004ff;
+            }
+            .write{
+                font-family: maru;
+               text-align:center;
+               color: aliceblue;
+                font-family: "maru";
+                
+            }
+            
+            #img{
+                display: block;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            #zagureakunn{
+                position: fixed;
+                bottom: -200px;
+                right: 0px;
+                
+            }
+        </style>
+        <script>
+            
+            
+            zagureakunn_x = -200;
+            let pos_stop_id;
+            function moveImage(){
+                
+                zagureakunn_x = zagureakunn_x + 1;
+                document.getElementById("zagureakunn").style.right = zagureakunn_x + "px";
+                
+                if (document.getElementById("zagureakunn").style.right == "-100px"){
+                    clearInterval(pos_stop_id);
+                    
+                }
+            }      
+            
+            pos_stop_id = setInterval(moveImage,2);
+            
+            
+                
+        
+        </script>
+    </head>
+    <body>
+        <img src="zagureakunn.png" id = "zagureakunn">
+        <img id = "img" style="position: fixed; top: -60px; left: 0px;" src="bar.jpg" alt="bar">
+        <a class="write" style="position: fixed; top: 10px; left: 20px;" href="https://www.youtube.com/channel/UCoWVZfbb1oGxtbVGmejf64g">YouTube</a>
+        <a class="write" style="position: fixed; top: 10px; left: 100px;" href="https://twitter.com/zagurea_i">Twitter</a>
+        <a class="write" style="position: fixed; top: 10px; left: 180px;" href="https://soundcloud.com/iruka_sinkai/unfinished">Soundcloud</a>
+        <a class="write" style="position: fixed; top: 10px; left: 280px;" href="https://www.youtube.com/channel/UC669jZbGKQD2MMJa71L8uXQ">MusicYouTube</a>
+        <h1 class="write" style="margin-top: 60px;">イルカの音楽</h1>
+        <a class="write" style="position: fixed; bottom: 10px; left: 10px;" href="https://zagurea.github.io/home/zagurea.html">ホームページへ戻る</a>
+
+        <img id="img" src="iruka_sinkai.jpg">
+        <p class="write">イルカは音楽を作ったりしている。（歌詞は暗い）</p>
+
+        <p class="write">不老不死 (2021/12/23)</p>
+        <audio id = "img" controls src="musics\furoufusi.mp3">不老不死</audio>
+
+        <p class="write">星 (2022/04/26)</p>
+        <audio id = "img" controls src="musics\hosi.mp3">星</audio>
+
+        <p class="write">青空 (2022/08/19)</p>
+        <audio id = "img" controls src="musics\SKY_BULE.mp3">青空</audio>
+
+        <p class="write">COMUPUTER.mp3 (2022/08/21)</p>
+        <audio id = "img" controls src="musics\COMUPUTER.mp3">COMUPUTER_mp3</audio>
+
+        <p class="write">BETA (2022/10/01)</p>
+        <audio id = "img" controls src="musics\BETA.mp3">BETA</audio>
+
+        <p class="write">StArT (2022/12/29)</p>
+        <audio id = "img" controls src="musics\StArT.mp3">StArT</audio>
+
+        <p class="write">未来失敗予想 (2023/03/12)</p>
+        <audio id = "img" controls src="musics\FUTURE_FAILURE_TO_THINK.mp3">未来失敗予想</audio>
+    </body>
+</html>
