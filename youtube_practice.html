@@ -1,1 +1,50 @@
-<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" id="u0" href="https://rakko.tools/tools/129/lib/tinymce/skins/ui/oxide/content.min.css"><link rel="stylesheet" type="text/css" id="u1" href="https://rakko.tools/tools/129/lib/tinymce/skins/content/default/content.min.css"></head><body id="tinymce" class="mce-content-body " data-id="content" contenteditable="true" spellcheck="false"><pre class="clear-for-copy"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln"><br></span><span class="tag">&lt;html&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;body&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="code-comment"><span class="com">&lt;!-- 1. The &lt;iframe&gt; (and video player) will replace this &lt;div&gt; tag. --&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;div</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">"player"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="tag">&lt;script&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="code-comment"><span class="com">// 2. This code loads the IFrame Player API code asynchronously.</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> tag </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">'script'</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; tag</span><span class="pun">.</span><span class="pln">src </span><span class="pun">=</span> <span class="str">"https://www.youtube.com/iframe_api"</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> firstScriptTag </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="str">'script'</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">];</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; firstScriptTag</span><span class="pun">.</span><span class="pln">parentNode</span><span class="pun">.</span><span class="pln">insertBefore</span><span class="pun">(</span><span class="pln">tag</span><span class="pun">,</span><span class="pln"> firstScriptTag</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; </span><span class="code-comment"><span class="com">// 3. This function creates an &lt;iframe&gt; (and YouTube player)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="com">// &nbsp; &nbsp;after the API code downloads.</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> player</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> onYouTubeIframeAPIReady</span><span class="pun">()</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; player </span><span class="pun">=</span> <span class="kwd">new</span><span class="pln"> YT</span><span class="pun">.</span><span class="typ">Player</span><span class="pun">(</span><span class="str">'player'</span><span class="pun">,</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height</span><span class="pun">:</span> <span class="str">'360'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width</span><span class="pun">:</span> <span class="str">'640'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; videoId</span><span class="pun">:</span> <span class="str">'M7lc1UVf-VE'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; events</span><span class="pun">:</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">'onReady'</span><span class="pun">:</span><span class="pln"> onPlayerReady</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="str">'onStateChange'</span><span class="pun">:</span><span class="pln"> onPlayerStateChange<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; </span><span class="code-comment"><span class="com">// 4. The API will call this function when the video player is ready.</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> onPlayerReady</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; event</span><span class="pun">.</span><span class="pln">target</span><span class="pun">.</span><span class="pln">playVideo</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; </span><span class="code-comment"><span class="com">// 5. The API calls this function when the player's state changes.</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="com">// &nbsp; &nbsp;The function indicates that when playing a video (state=1),</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="com">// &nbsp; &nbsp;the player should play for six seconds and then stop.</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> done </span><span class="pun">=</span> <span class="kwd">false</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> onPlayerStateChange</span><span class="pun">(</span><span class="pln">event</span><span class="pun">)</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span> <span class="pun">(</span><span class="pln">event</span><span class="pun">.</span><span class="pln">data </span><span class="pun">==</span><span class="pln"> YT</span><span class="pun">.</span><span class="typ">PlayerState</span><span class="pun">.</span><span class="pln">PLAYING </span><span class="pun">&amp;&amp;</span> <span class="pun">!</span><span class="pln">done</span><span class="pun">)</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout</span><span class="pun">(</span><span class="pln">stopVideo</span><span class="pun">,</span> <span class="lit">6000</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; done </span><span class="pun">=</span> <span class="kwd">true</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">function</span><span class="pln"> stopVideo</span><span class="pun">()</span> <span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; player</span><span class="pun">.</span><span class="pln">stopVideo</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="tag">&lt;/script&gt;</span><span class="pln"><br>&nbsp; </span><span class="tag">&lt;/body&gt;</span><span class="pln"><br></span><span class="tag">&lt;/html&gt;</span></pre></body></html>
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
+</html>
